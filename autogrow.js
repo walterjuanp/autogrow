@@ -14,9 +14,9 @@
         ;
         opts = $.isPlainObject(opts) ? opts : {context: opts ? opts : $(document)};
         opts = $.extend({}, defaults, opts);
-        that.each(function(i, elem){
+        that.each(function(i, element){
             var min, clone;
-            elem = $(elem);
+            elem = $(element);
             //if the element is "invisible", we get an incorrect height value
             //to get correct value, clone and append to the body. 
             if (elem.is(':visible') || parseInt(elem.css('height'), 10) > 0) {
@@ -41,7 +41,7 @@
             elem.css('height', min);
             
             if (opts.onInitialize) {
-                resize.call(elem);
+                resize.call(element);
             }
         });
         opts.context
